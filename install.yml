@@ -16,13 +16,7 @@
       with_items:
          - httpd
          - smb
-
-    - name: Abriendo Firewald
-      firewalld:
-        service: http
-        permanent: true
-        immediate: true
-        state: enabled
+         
     - name: copiando contenido
       copy:
         content: "Bienvenido a mi web"
