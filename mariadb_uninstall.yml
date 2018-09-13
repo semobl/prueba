@@ -1,0 +1,16 @@
+---
+- hosts: all
+  vars_files:
+    - vars1.yml
+  tasks:
+
+    - name: parando {{ db_srv }}
+      service:
+        name: "{{ db_srv }}"
+        state: stopped
+
+    - name: desinstalar {{ db_pkg }}
+      yum:
+        name: "{{ db_pkg }}"
+        state: absent
+...
